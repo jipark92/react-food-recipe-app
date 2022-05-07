@@ -13,7 +13,7 @@ export default function NavBars() {
           <Nav className="me-auto">
             <Link to="/" className='text-light'>Home</Link>
             <Link to="/recipe" className='text-light'>Recipe</Link>
-            <Link to="/about" className='text-light'>About</Link>
+            <Link to="/contact" className='text-light'>Contact</Link>
           </Nav>
           </Container>
         </Navbar>

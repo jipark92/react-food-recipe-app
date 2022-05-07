@@ -1,18 +1,8 @@
-import { Form, Button, Offcanvas, Overlay,Popover, Accordion} from 'react-bootstrap';
+import { Form, Button, Accordion} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useEffect, useState, useRef} from 'react'
-import RecipeCard from './RecipeCard';
+import {useState} from 'react'
 
 export default function Recipe() {
-    //bootstrap useState
-    const [show, setShow] = useState(false);
-    const [target, setTarget] = useState(null);
-    const ref = useRef(null);
-
-    const handleClick = (e) => {
-        setShow(!show);
-        setTarget(e.target);
-    };
     //
     const [searchValue, setSearchValue] = useState();
     const [datas, setData] = useState([])
@@ -38,8 +28,6 @@ export default function Recipe() {
         fetchRecipe()
         console.log(datas)
     }
-    //
-
     //
     return (
         <div className="recipe-container">
@@ -69,47 +57,46 @@ export default function Recipe() {
                                             <Accordion.Header>Ingredients</Accordion.Header>
                                             <Accordion.Body>
                                                 <div className='recipe-list-container'>
-                                                    <a>{data.strIngredient1}</a>
-                                                    <a>{data.strIngredient2}</a>
-                                                    <a>{data.strIngredient3}</a>
-                                                    <a>{data.strIngredient4}</a>
-                                                    <a>{data.strIngredient5}</a>
-                                                    <a>{data.strIngredient6}</a>
-                                                    <a>{data.strIngredient7}</a>
-                                                    <a>{data.strIngredient8}</a>
-                                                    <a>{data.strIngredient9}</a>
-                                                    <a>{data.strIngredient10}</a>
-                                                    <a>{data.strIngredient11}</a>
-                                                    <a>{data.strIngredient12}</a>
-                                                    <a>{data.strIngredient13}</a>
-                                                    <a>{data.strIngredient4}</a>
-                                                    <a>{data.strIngredient15}</a>
-                                                    <a>{data.strIngredient16}</a>
-                                                    <a>{data.strIngredient17}</a>
-                                                    <a>{data.strIngredient18}</a>
-                                                    <a>{data.strIngredient19}</a>
-                                                    <a>{data.strIngredient20}</a>
+                                                    <a>{data.strIngredient1} {data.strMeasure1}</a>
+                                                    <a>{data.strIngredient2} {data.strMeasure2}</a>
+                                                    <a>{data.strIngredient3} {data.strMeasure3}</a>
+                                                    <a>{data.strIngredient4} {data.strMeasure4}</a>
+                                                    <a>{data.strIngredient5} {data.strMeasure5}</a>
+                                                    <a>{data.strIngredient6} {data.strMeasure6}</a>
+                                                    <a>{data.strIngredient7} {data.strMeasure7}</a>
+                                                    <a>{data.strIngredient8} {data.strMeasure8}</a>
+                                                    <a>{data.strIngredient9} {data.strMeasure9}</a>
+                                                    <a>{data.strIngredient10} {data.strMeasure10}</a>
+                                                    <a>{data.strIngredient11} {data.strMeasure11}</a>
+                                                    <a>{data.strIngredient12} {data.strMeasure12}</a>
+                                                    <a>{data.strIngredient13} {data.strMeasure13}</a>
+                                                    <a>{data.strIngredient14} {data.strMeasure14}</a>
+                                                    <a>{data.strIngredient15} {data.strMeasure15}</a>
+                                                    <a>{data.strIngredient16} {data.strMeasure16}</a>
+                                                    <a>{data.strIngredient17} {data.strMeasure17}</a>
+                                                    <a>{data.strIngredient18} {data.strMeasure18}</a>
+                                                    <a>{data.strIngredient19} {data.strMeasure19}</a>
+                                                    <a>{data.strIngredient20} {data.strMeasure20}</a>
                                                 </div>
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="1">
-                                            <Accordion.Header>Measurements</Accordion.Header>
+                                            <Accordion.Header>Instruction</Accordion.Header>
                                             <Accordion.Body>
-                                                {data.strMeasure1}
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="2">
-                                            <Accordion.Header>Video Tutorial</Accordion.Header>
-                                            <Accordion.Body>
-                                                <a href={data.strYoutube}>Youtube Tutorial</a>
+                                                <div className='measurement-container'>
+                                                    <a>{data.strInstructions}</a>
+                                                </div>
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="3">
                                             <Accordion.Header>Information</Accordion.Header>
                                             <Accordion.Body>
-                                                <a href={data.strSource} target="_blank"> Original Source</a>
-                                                Category: {data.strCategory}
-                                                Country: {data.strArea}
+                                                <div className='info-container'>
+                                                    <a>Category: {data.strCategory}</a>
+                                                    <a>Country: {data.strArea}</a>
+                                                    <a href={data.strSource} target="_blank"> Original Source</a>
+                                                    <a href={data.strYoutube}>Youtube Tutorial</a>
+                                                </div>
                                             </Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion>
@@ -122,34 +109,3 @@ export default function Recipe() {
         </div>
     )
 }
-
-
-//     <Offcanvas show={show} onHide={handleClose}>
-//     <Offcanvas.Header closeButton>
-//     <Offcanvas.Title>{data.strMeal}</Offcanvas.Title>
-//     </Offcanvas.Header>
-//     <Offcanvas.Body>
-//         s
-//     </Offcanvas.Body>
-// </Offcanvas>
-
-{/* <p>{data.strIngredient1}</p>
-<p>{data.strIngredient2}</p>
-<p>{data.strIngredient3}</p>
-<p>{data.strIngredient4}</p>
-<p>{data.strIngredient5}</p>
-<p>{data.strIngredient6}</p>
-<p>{data.strIngredient7}</p>
-<p>{data.strIngredient8}</p>
-<p>{data.strIngredient9}</p>
-<p>{data.strIngredient10}</p>
-<p>{data.strIngredient11}</p>
-<p>{data.strIngredient12}</p>
-<p>{data.strIngredient13}</p>
-<p>{data.strIngredient14}</p>
-<p>{data.strIngredient15}</p>
-<p>{data.strIngredient16}</p>
-<p>{data.strIngredient17}</p>
-<p>{data.strIngredient18}</p>
-<p>{data.strIngredient19}</p>
-<p>{data.strIngredient20}</p> */}

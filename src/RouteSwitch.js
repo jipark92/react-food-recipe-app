@@ -11,7 +11,7 @@ export default function RouteSwitch() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/recipe" element={<Recipe/>}/>
-                <Route path="/about" element={<About/>}/>
+                <Route path="/contact" element={<About/>}/>
             </Routes>
         </BrowserRouter>
     )
