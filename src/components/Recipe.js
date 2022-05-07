@@ -1,19 +1,32 @@
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 export default function Recipe() {
 
     const [searchValue, setSearchValue] = useState();
     const [showResult, setShowResult] = useState();
+    const [datas, setData] = useState([])
 
-    const getRecipeApi = () => {
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
-        .then(response=>response.json())
-        .then(data=>{
-            console.log(data)
-            
+    const getRecipeApi = (food) => {
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`)
+        .then(response=>{
+            return response.json()
         })
+        .then(response=>{
+            showInfo(response)
+        })
+        .catch(()=>{
+            alert('no food found')
+        })
+    }
+
+    const showInfo =(res)=>{
+
+    }
+
+    const searchBtn = () => {
+        getRecipeApi(searchValue)
     }
 
     const handleSearchValue = (e) =>{ 
@@ -29,7 +42,7 @@ export default function Recipe() {
 
             <div className="search-container">
                 <Form.Control type="text" placeholder="Normal text" onChange={handleSearchValue} />
-                <Button variant="primary" size="md" onClick={getRecipeApi}>Search</Button>
+                <Button variant="primary" size="md" onClick={searchBtn}>Search</Button>
             </div>
 
             <div className='result-container'>
@@ -37,7 +50,7 @@ export default function Recipe() {
                     <h2>Your Search Results:</h2>
                 </div>
                 <div className='result-info-container'>
-                    <p>blah</p>
+                    <p>{showResult}</p>
                 </div>
             </div>
         </div>
