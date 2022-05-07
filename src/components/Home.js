@@ -1,10 +1,15 @@
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom'
+import Trending from './Trending';
 
 export default function Home() {
     return (
         <div className="home-container">
+
+            <Trending/>
+
+
             <div className="welcome-container">
                 <div className='welcome-1-container'>
                     <div>
@@ -14,7 +19,7 @@ export default function Home() {
                     </div>
                     <div>
                         <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2017%2F05%2F1237453-Mixed-Berry-Trifle-Photo-by-Kims-Cooking-Now-650x465-1.jpg&w=316&h=211&c=sc&poi=face&q=60"/>
-                        <h3>12 Easy Mother's Day Treats That'll Make Her So Proud of You</h3>
+                        <h3>12 Easy Mother's Day Treats</h3>
                     </div>
                 </div>
 
@@ -26,11 +31,7 @@ export default function Home() {
                 
                 </div>
             </div>
-            <div className="recipe-btn-container">
-                <Link to='/recipe'>
-                    <Button variant="primary" size="lg">Search Recipe</Button>
-                </Link>
-            </div>
+            
         </div>
     )
 }
