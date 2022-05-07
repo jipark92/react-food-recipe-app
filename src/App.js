@@ -1,7 +1,9 @@
+import RouteSwitch from "./RouteSwitch";
+
 function App() {
   return (
-    <div className="App">
-      
+    <div className="main-container">
+      <RouteSwitch/>
     </div>
   );
 }
