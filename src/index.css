@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container{
+  border: 1px solid black;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title-container a{
+  height: 5vh;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.me-auto {
+  gap:1rem;
+}
