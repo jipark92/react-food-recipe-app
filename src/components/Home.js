@@ -10,7 +10,7 @@ export default function Home() {
             </div>
             <div className="recipe-btn-container">
                 <Link to='/recipe'>
-                    <Button variant="info" size="lg">Search Recipe</Button>
+                    <Button variant="primary" size="lg">Search Recipe</Button>
                 </Link>
             </div>
         </div>
