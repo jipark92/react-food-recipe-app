@@ -22,3 +22,41 @@
 .me-auto {
   gap:1rem;
 }
+
+.home-container{
+  /* border: 1px solid black; */
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  /* background-position: center; */
+  background-color: #e0ebef;
+}
+
+.welcome-container{
+  text-align: center;
+  filter: blur(1px);
+}
+
+.welcome-container:hover{
+  filter: blur(0px);
+}
+
+.welcome-container p{
+  font-size: 2.5rem;
+  font-weight: 1000;
+}
+
+.recipe-btn-container{
+
+}
+
+.recipe-btn-container:hover{
+  transform: scale(1.1);
+}

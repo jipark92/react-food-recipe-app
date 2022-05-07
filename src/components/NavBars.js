@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 export default function NavBars() {
     return (
       <div  className='title-container'>
-        <Navbar bg="primary" variant="dark">
+        <Navbar bg="info" variant="dark">
           <Container>
           <Navbar.Brand>
             <Link to="/" className='text-light'>Food Recipe App |</Link>
