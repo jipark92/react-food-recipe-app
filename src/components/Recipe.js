@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react'
 
 export default function Recipe() {
-    //
+    //storage useState
     const [searchValue, setSearchValue] = useState();
     const [datas, setData] = useState([])
-    //
+    //api link
     let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`
-    //
+    //get api info function
     const fetchRecipe = async () => {
         try {
             const res = await fetch(url)
@@ -19,16 +19,16 @@ export default function Recipe() {
             alert(error)
         }
     }
-    //
+    //change input value function
     const handleSearchValue = (e) =>{ 
         setSearchValue(prevSearchValue => prevSearchValue = e.target.value)
     }
-    //
+    //search api button function
     const searchBtn = () =>{
         fetchRecipe()
         console.log(datas)
     }
-    //
+    
     return (
         <div className="recipe-container">
             <div className='description-container'>
@@ -42,9 +42,11 @@ export default function Recipe() {
             </div>
 
             <div className='result-container'>
+
                 <div className='result-text-container'>
                     <h2>Your Search Results:</h2>
                 </div>
+
                 <div className='result-info-container'>
                     {datas.map(data=>{
                         return (

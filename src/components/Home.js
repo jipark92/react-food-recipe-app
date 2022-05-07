@@ -1,15 +1,10 @@
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link} from 'react-router-dom'
 import Trending from './Trending';
 
 export default function Home() {
     return (
         <div className="home-container">
-
             <Trending/>
-
-
             <div className="welcome-container">
                 <div className='welcome-1-container'>
                     <div>
@@ -22,16 +17,12 @@ export default function Home() {
                         <h3>12 Easy Mother's Day Treats</h3>
                     </div>
                 </div>
-
                 <div className='welcome-2-container'>
-                
                         <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2020%2F03%2F4513899-2000.jpg&w=640&h=428&c=sc&poi=face&q=60"/>
                         <h3>Our Complete Collection of Mother's Day Brunch Recipes</h3>
                         <p>Tastey crepe, French toast, and egg recipes that Mom will flip for, complete with how-to videos, ratings, reviews, and cooking tips.</p>
-                
                 </div>
-            </div>
-            
+            </div> 
         </div>
     )
 }
