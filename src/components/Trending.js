@@ -13,7 +13,7 @@ export default function Trending() {
             </div>
             <div className='trends'>
                 <div>
-                    <h4>Trending</h4>
+                    <h4>Trending: </h4>
                 </div>
                 <div className='trending-food'>
                     <div>

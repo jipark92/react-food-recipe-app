@@ -9,26 +9,30 @@
 
 .main-container{
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100vw;
   background-color: #e0ebef;
-
 }
 
+
+
 .title-container a{
-  height: 5vh;
   text-decoration: none;
   font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
+
+
 
 .me-auto {
   gap:1rem;
 }
 
 .home-container{
-  height:90%;
+  height:100%;
+  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -43,8 +47,6 @@
 
 .trending-container{
   /* border: 1px solid black; */
-  max-width: 1250px;
-  min-height: 5%;
   display:flex;
   margin: 1rem;
   justify-content: space-between;
@@ -55,6 +57,12 @@
 .trending-food{
   display: flex;
   gap:1rem;
+  min-width: 350px;
+}
+
+.trends > div:nth-child(1){
+  /* border: 5px solid black; */
+  width: 100%;
 }
 
 .trends{
@@ -261,7 +269,7 @@
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 560px){
   .trending-container{
     flex-direction: column;
   }
@@ -270,5 +278,10 @@
   }
   .welcome-container{
     flex-wrap: wrap;
+  }
+  .container{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
